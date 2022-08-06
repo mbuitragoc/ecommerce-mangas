@@ -1,17 +1,16 @@
-import './App.css'
-import { ChakraProvider, Heading } from '@chakra-ui/react'
-import { Navbar } from "./components/NavBar"
-import { ItemListContainer } from "./components/ItemListContainer"
+import { ChakraProvider, Heading } from "@chakra-ui/react";
+import "./App.css";
+import { ItemListContainer } from "./components/ItemListContainer";
+import { Navbar } from "./components/NavBar";
 
 function App() {
-
   return (
     <ChakraProvider>
       <Navbar />
-      <ItemListContainer greeting="Bienvenidos a mi tienda 😊"/>
       <Heading>Tienda de Mangas</Heading>
+      <ItemListContainer greeting="Bienvenidos a mi tienda 😊" />
     </ChakraProvider>
-  )  
+  );
 }
 
-export default App
+export default App;
