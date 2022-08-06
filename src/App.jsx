@@ -7,7 +7,7 @@ function App() {
   return (
     <ChakraProvider>
       <Navbar />
-      <Heading>Tienda de Mangas</Heading>
+      <Heading>Tienda de Mangas - August 6</Heading>
       <ItemListContainer greeting="Bienvenidos a mi tienda 😊" />
     </ChakraProvider>
   );
