@@ -1,7 +1,6 @@
 import { Button, Image, Link, Text, VStack } from "@chakra-ui/react";
 
 const Item = ({ product }) => {
-  console.log(product);
   return (
     <VStack
       boxShadow="lg"

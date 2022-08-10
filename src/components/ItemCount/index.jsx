@@ -21,5 +21,3 @@ const ItemCount = ({initial, stock, onAdd}) => {
 }
 
 export { ItemCount };
-
- 
