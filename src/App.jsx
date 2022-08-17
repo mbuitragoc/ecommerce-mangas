@@ -1,5 +1,7 @@
 import { ChakraProvider, Heading } from "@chakra-ui/react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import { Item } from "./components/item";
 import { ItemDetailContainer } from "./components/ItemDetailContainer";
 import { ItemListContainer } from "./components/ItemListContainer";
 import { Navbar } from "./components/NavBar";
@@ -7,10 +9,19 @@ import { Navbar } from "./components/NavBar";
 function App() {
   return (
     <ChakraProvider>
-      <Navbar />
-      <Heading>Tienda de Mangas</Heading>
-      {/* <ItemListContainer greeting="Bienvenidos a mi tienda 😊" /> */}
-      <ItemDetailContainer />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <ItemListContainer greeting="Bienvenidos a mi tienda 😊" />
+            }
+          />
+          <Route path="/category/:category" element={<ItemListContainer />} />
+          <Route path="/product/:id" element={<ItemDetailContainer />} />
+        </Routes>
+      </BrowserRouter>
     </ChakraProvider>
   );
 }

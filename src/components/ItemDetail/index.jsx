@@ -25,9 +25,10 @@ const ItemDetail = ({ listProduct }) => {
       <Tag>{listProduct.category}</Tag>
       <Text>{listProduct.description}</Text>
       <UnorderedList>
-        {listProduct.chapters.map((element, index) => (
-          <ListItem key={index}>{element}</ListItem>
-        ))}
+        {listProduct.chapters &&
+          listProduct.chapters.map((element, index) => (
+            <ListItem key={index}>{element}</ListItem>
+          ))}
       </UnorderedList>
     </VStack>
   );

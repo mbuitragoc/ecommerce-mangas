@@ -1,21 +1,30 @@
-import { HStack, Spacer, Link} from "@chakra-ui/react";
+import { HStack, Link, Spacer } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import {CartWidget} from "../CartWidget"
+import { CartWidget } from "../CartWidget";
 
 const Navbar = () => {
-  return(
+  return (
     <HStack as="nav">
-      <img src={logo} alt="logo-Manga-store" width="100px"/>
-      <Spacer/>
+      <NavLink to="/">
+        <img src={logo} alt="logo-Manga-store" width="100px" />
+      </NavLink>
+      <Spacer />
       <HStack>
-        <Link>Mangas</Link>
-        <Link>Colecciones</Link>
-        <Link>Figuras</Link>
-        <Spacer/>
-        <CartWidget/>
+        <NavLink to="category/Manga">
+          <Link>Mangas</Link>
+        </NavLink>
+        <NavLink to="category/Colecciones">
+          <Link>Colecciones</Link>
+        </NavLink>
+        <NavLink to="category/Figuras">
+          <Link>Figuras</Link>
+        </NavLink>
+        <Spacer />
+        <CartWidget />
       </HStack>
     </HStack>
-  )
-}
+  );
+};
 
-export {Navbar}
+export { Navbar };

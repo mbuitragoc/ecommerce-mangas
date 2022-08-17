@@ -1,5 +1,6 @@
-import { Heading, Text } from "@chakra-ui/react";
+import { CircularProgress, Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { customFetch } from "../../utils/customFetch";
 import { products } from "../../utils/products";
 import { ItemCount } from "../ItemCount";
@@ -9,13 +10,20 @@ const ItemListContainer = ({ greeting }) => {
   const [listProduct, setListProduct] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const { category } = useParams();
+
   useEffect(() => {
     setLoading(true);
     customFetch(products).then((res) => {
-      setLoading(false);
-      setListProduct(res);
+      if (category) {
+        setLoading(false);
+        setListProduct(res.filter((prod) => prod.category === category));
+      } else {
+        setLoading(false);
+        setListProduct(res);
+      }
     });
-  }, []);
+  }, [category]);
 
   return (
     <>
@@ -23,7 +31,7 @@ const ItemListContainer = ({ greeting }) => {
       {!loading ? (
         <ItemList listProduct={listProduct} />
       ) : (
-        <Text>Cargando...</Text>
+        <CircularProgress isIndeterminate color="green.300" />
       )}
       {/* <ItemCount initial={1} stock={5} onAdd={()=>{}}/> */}
     </>
