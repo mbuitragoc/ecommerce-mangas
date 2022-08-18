@@ -20,7 +20,6 @@ const Navbar = () => {
         <NavLink to="category/Figuras">
           <Link>Figuras</Link>
         </NavLink>
-        <Spacer />
         <CartWidget />
       </HStack>
     </HStack>

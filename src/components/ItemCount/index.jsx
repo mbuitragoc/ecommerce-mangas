@@ -8,6 +8,8 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 
   const decrease = () => count > initial && setCount(count - 1);
 
+
+
   return (
     <HStack>
       <Button variant="ghost" colorScheme="red" size="sm" onClick={decrease}>
@@ -17,7 +19,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
       <Button variant="ghost" colorScheme="red" size="sm" onClick={increase}>
         +
       </Button>
-      <Button colorScheme="red" size="sm">
+      <Button colorScheme="red" size="sm" onClick={onAdd}>
         Agregar al carrito
       </Button>
     </HStack>

@@ -12,12 +12,28 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 import { ItemCount } from "../ItemCount";
 
 const ItemDetail = ({ listProduct }) => {
-  const { image, product, price, stock, category, description, config } =
-    listProduct;
+  const {
+    image,
+    product,
+    price,
+    stock,
+    category,
+    description,
+    config,
+    initial,
+  } = listProduct;
+
+  const [isAdded, setIsAdded] = useState(false);
+
+  const onAdd = () => {
+    setIsAdded(true);
+  };
 
   return (
     <Center boxShadow="lg" p="6" rounded="md" bg="white" m="20px auto">
@@ -66,7 +82,13 @@ const ItemDetail = ({ listProduct }) => {
             </Select>
           </HStack>
         )}
-        <ItemCount stock={stock} initial="1" />
+        {isAdded ? (
+          <NavLink to="/cart">
+            <Button colorScheme="green">Ir al carrito</Button>
+          </NavLink>
+        ) : (
+          <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
+        )}
       </VStack>
     </Center>
   );
