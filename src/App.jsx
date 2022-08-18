@@ -20,6 +20,10 @@ function App() {
           />
           <Route path="/category/:category" element={<ItemListContainer />} />
           <Route path="/product/:id" element={<ItemDetailContainer />} />
+          <Route
+            path="/category/:category/product/:id"
+            element={<ItemDetailContainer />}
+          />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
