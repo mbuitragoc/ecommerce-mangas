@@ -1,25 +1,43 @@
-import { Button, Image, Link, Text, VStack } from "@chakra-ui/react";
+import {
+  AspectRatio,
+  Button,
+  Grid,
+  Image,
+  Link,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
 const Item = ({ product }) => {
   return (
-    <VStack
+    <Grid
       boxShadow="lg"
-      p="6"
+      p="4"
       rounded="md"
       bg="white"
       m="15px"
       minWidth="275px"
+      gap="2"
+      justifyContent="center"
     >
-      <Image src={product.image} alt={product.product} w="300px" />
-      <Text>{product.product}</Text>
-      <Text>${product.price}</Text>
+      <Image
+        src={product.image}
+        alt={product.product}
+        objectFit="contain"
+        h="400px"
+        maxWidth="300px"
+      />
+      <Text align="center" as="b">
+        {product.product}
+      </Text>
+      <Text align="center">${product.price}</Text>
       <Button colorScheme="red" size="xs">
-        <NavLink to={`product/${product.id}`}>
-          <Link>Ver Detalles</Link>
+        <NavLink as="link" to={`product/${product.id}`}>
+          Ver Detalles
         </NavLink>
       </Button>
-    </VStack>
+    </Grid>
   );
 };
 

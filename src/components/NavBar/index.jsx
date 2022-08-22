@@ -11,15 +11,9 @@ const Navbar = () => {
       </NavLink>
       <Spacer />
       <HStack>
-        <NavLink to="category/Manga">
-          <Link>Mangas</Link>
-        </NavLink>
-        <NavLink to="category/Colecciones">
-          <Link>Colecciones</Link>
-        </NavLink>
-        <NavLink to="category/Figuras">
-          <Link>Figuras</Link>
-        </NavLink>
+        <NavLink to="category/Manga">Mangas</NavLink>
+        <NavLink to="category/Colecciones">Colecciones</NavLink>
+        <NavLink to="category/Figuras">Figuras</NavLink>
         <CartWidget />
       </HStack>
     </HStack>

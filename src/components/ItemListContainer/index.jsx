@@ -1,4 +1,4 @@
-import { CircularProgress, Heading } from "@chakra-ui/react";
+import { CircularProgress, Grid, Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { customFetch } from "../../utils/customFetch";
@@ -29,7 +29,9 @@ const ItemListContainer = ({ greeting }) => {
     <>
       <Heading>{greeting}</Heading>
       {!loading ? (
-        <ItemList listProduct={listProduct} />
+        <Grid templateColumns="repeat(3,1fr)">
+          <ItemList listProduct={listProduct} />
+        </Grid>
       ) : (
         <CircularProgress isIndeterminate color="green.300" />
       )}
