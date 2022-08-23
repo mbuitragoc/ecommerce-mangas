@@ -32,15 +32,12 @@ const ItemDetail = ({ listProduct }) => {
 
   const [isAdded, setIsAdded] = useState(false);
 
-  const { addToCart, cartList } = useCartContext();
+  const { addToCart } = useCartContext();
 
   const onAdd = (quantity) => {
     addToCart(listProduct, quantity);
     setIsAdded(true);
   };
-
-  console.log(addToCart);
-  console.log(cartList);
 
   return (
     <Center boxShadow="lg" p="6" rounded="md" bg="white" m="20px auto">
