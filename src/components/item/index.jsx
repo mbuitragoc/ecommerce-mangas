@@ -1,10 +1,4 @@
-import {
-  AspectRatio,
-  Button,
-  Grid,
-  Image,
-  Text,
-} from "@chakra-ui/react";
+import { AspectRatio, Button, Grid, Image, Text } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
 const Item = ({ product }) => {
@@ -30,11 +24,11 @@ const Item = ({ product }) => {
         {product.product}
       </Text>
       <Text align="center">${product.price}</Text>
-      <Button colorScheme="red" size="xs">
-        <NavLink as="link" to={`product/${product.id}`}>
+      <NavLink as="link" to={`product/${product.id}`} align="center">
+        <Button colorScheme="red" size="xs">
           Ver Detalles
-        </NavLink>
-      </Button>
+        </Button>
+      </NavLink>
     </Grid>
   );
 };
