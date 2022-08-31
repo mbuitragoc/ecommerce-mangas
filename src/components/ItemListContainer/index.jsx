@@ -17,18 +17,27 @@ const ItemListContainer = ({ greeting }) => {
 
   useEffect(() => {
     const consulta = getDocs(prodCollection);
-    console.log(consulta);
-    
     setLoading(true);
-    customFetch(products).then((res) => {
-      if (category) {
-        setLoading(false);
-        setListProduct(res.filter((prod) => prod.category === category));
-      } else {
-        setLoading(false);
-        setListProduct(res);
-      }
-    });
+
+    consulta
+      .then((snapshot) => {
+        const producto = snapshot.docs.map((doc) => {
+          return {
+            ...doc.data(),
+            id: doc.id,
+          };
+        });
+        if (category) {
+          setLoading(false);
+          setListProduct(producto.filter((prod) => prod.category === category));
+        } else {
+          setLoading(false);
+          setListProduct(producto);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [category]);
 
   return (
@@ -41,7 +50,6 @@ const ItemListContainer = ({ greeting }) => {
       ) : (
         <CircularProgress isIndeterminate color="green.300" />
       )}
-      {/* <ItemCount initial={1} stock={5} onAdd={()=>{}}/> */}
     </>
   );
 };

@@ -3,9 +3,7 @@ import {
   Button,
   Grid,
   Image,
-  Link,
   Text,
-  VStack,
 } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
