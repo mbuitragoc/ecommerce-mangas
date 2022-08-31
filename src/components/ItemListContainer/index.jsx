@@ -2,9 +2,7 @@ import { CircularProgress, Grid, Heading } from "@chakra-ui/react";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { customFetch } from "../../utils/customFetch";
 import { db } from "../../utils/firebase";
-import { products } from "../../utils/products";
 import { ItemList } from "../itemList";
 
 const prodCollection = collection(db, "products");
