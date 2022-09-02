@@ -64,7 +64,7 @@ const Cart = () => {
       })
       .catch((error) => console.log(error));
 
-    console.log(order);
+      cleanCart()
   };
 
   return (
