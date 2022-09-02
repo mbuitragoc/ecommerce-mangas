@@ -2,6 +2,7 @@ import { CircularProgress, Grid, Heading } from "@chakra-ui/react";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import { db } from "../../utils/firebase";
 import { ItemList } from "../itemList";
 
@@ -34,7 +35,7 @@ const ItemListContainer = ({ greeting }) => {
         }
       })
       .catch((err) => {
-        console.log(err);
+        toast.error("Error al cargar productos");
       });
   }, [category]);
 

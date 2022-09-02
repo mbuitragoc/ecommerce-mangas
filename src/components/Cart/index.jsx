@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useState } from "react";
+import { toast } from "react-toastify";
 import { useCartContext } from "../../context/CartContext";
 import { db } from "../../utils/firebase";
 
@@ -59,6 +60,7 @@ const Cart = () => {
     consulta
       .then((res) => {
         console.log(res.id);
+        toast.success(`Orden #${res.id} creada con exito`);
       })
       .catch((error) => console.log(error));
 

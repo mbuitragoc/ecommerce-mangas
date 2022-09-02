@@ -2,6 +2,7 @@ import { CircularProgress, Text } from "@chakra-ui/react";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import { db } from "../../utils/firebase";
 import { ItemDetail } from "../ItemDetail";
 
@@ -29,7 +30,7 @@ const ItemDetailContainer = () => {
         setListProduct(producto.find((prod) => prod.id === id));
       })
       .catch((err) => {
-        console.log(err);
+        toast.error("Error al cargar producto");
       });
   }, []);
 
