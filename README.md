@@ -31,7 +31,7 @@
     <br />
     <br />
     <br />
-    <a href="https://github.com/mbuitragoc/ecommerce-mangas">View Demo</a>
+    <a href="https://ecommerce-mangas.vercel.app">View Demo</a>
     ·
     <a href="https://github.com/mbuitragoc/ecommerce-mangas/issues">Report Bug</a>
     ·
