@@ -69,25 +69,39 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://ecommerce-mangas.vercel.app)
+[![Ecommerce Mangas Screen Shot][ecommerce-screenshot]](https://ecommerce-mangas.vercel.app)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+En este proyecto creamos una pagina de ecommerce funcional, con diferentes secciones, detalles de cada producto, y diferentes opciones en cuanto a la configuracion de los productos.
 
-Here's why:
+Manejamos los componentes de la interfaz de usuario mediante el framework React, utilizando una organizacion de componentes dentro de contenedores.
 
-- Your time should be focused on creating something amazing. A project that solves a problem and helps others
-- You shouldn't be doing the same tasks over and over like creating a README from scratch
-- You should implement DRY principles to the rest of your life :smile:
+Se utilizaron los estados de react para agregar mayor interactividad a la pagina y poder mostrar en tiempo real los items y el carrito que adiciona el usuario.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+Algunas de las caracteristicas de React que se utilizaron:
 
-Use the `BLANK_README.md` to get started.
+- States
+- Contexts
+- Routes
+- Forms 
+- Components
+
+Adicional a esto se utilizo Chakra UI para los estilos y Firebase para un manejo de base de datos sencillo mediante el uso de:
+
+- Collection
+- Docs
+- Get & Add
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Para la construccion de este proyecto se partio de un proyecto creado con Vite, utilizamos React como framework de frontend y Chakra.ui para los estilos de los diferentes componentes.
+
+Utilizamos Firebase para poder mantener una base de datos en tiempo real y llevar el control de las ordenes que se realizan.
+
+Para poder manejar las versiones se utilizo git y para llevar el repositorio GitHub.
+
+Para el deployment del ecommerce utilizando los servicios de vercel
 
 - [![React][react.js]][react-url]
 - [![Github][github]][github-url]
@@ -102,12 +116,11 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Para poder correr este proyecto de manera local es necesario seguir estas instrucciones
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Es fundamental tener npm installado desde la ultima version.
 
 - npm
   ```sh
@@ -116,20 +129,25 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Para poder correr esta aplicacion desde un servidor local debemos de seguir estos pasos_
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clonar el repositorio
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/mbuitragoc/ecommerce-mangas
    ```
-3. Install NPM packages
+2. Instalar los paquetes via NPM
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = "ENTER YOUR API";
+3. Dentro de la carpeta `/src/utils` remplazamos el contenido de `firebase.js` por lo que obtenemos de nuestra consola de [firebase](https://firebase.google.com/?hl=es)
+   
+4. Para poder correr nuestra aplicacion utilizar
+   ```sh
+   npm run dev
+   ```
+5. Para poder salir de la instancia que se crea
+   ```sh
+   ^C s
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -138,9 +156,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+A partir de este proyecto se puede visualizar el uso de los diferentes componentes y funciones de React. Podemos interactuar y ver el manejo desde nuestra base de datos y como se utiliza.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,15 +164,15 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-  - [ ] Chinese
-  - [ ] Spanish
+- [x] Diseño de los componentes
+- [x] Conexión con la base de datos
+- [x] Deploy mediante Vercel
+- [ ] Soporte a diferentes modos
+  - [x] Light
+  - [ ] Dark
+- [ ] Implementacion con Stripe para ejemplificar el manejo de pagos
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+Puedes visitar [open issues](https://github.com/othneildrew/Best-README-Template/issues) para una lista de funciones solicitas y posibles errores.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -164,16 +180,17 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Al ser un proyecto de codigo abierto las contribuciones de la comunidad son uno de los mayores fuertes. Cualquier contribucion que realicen sera **altamente apreciada**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+Si tienes una sugerencia/funcionalidad que crees que puede mejorar este projecto por favor has fork al repositorio y abre un pull request. Tambien puedes abrir un issue con el tag **"mejoras"**
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Muchisimas Gracias ❤️
+
+1. Has fork del proyecto
+2. Crea una nueva branch para la funcionalidad que quieres agregar (`git checkout -b feature/AmazingFeature`)
+3. Realiza commit a los cambios que realizas (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la branch que agregaste (`git push origin feature/AmazingFeature`)
+5. Abre una Pull Request para que podamos validar la funcionalidad
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -210,8 +227,6 @@ Agradecimieentos especiales a todas estas herramientas que facilitaron el trabaj
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
 [contributors-shield]: https://img.shields.io/github/contributors/mbuitragoc/ecommerce-mangas?style=for-the-badge
 [contributors-url]: https://github.com/mbuitragoc/ecommerce-mangas/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/mbuitragoc/ecommerce-mangas?style=for-the-badge
@@ -223,7 +238,7 @@ Agradecimieentos especiales a todas estas herramientas que facilitaron el trabaj
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/mbuitragoc/
 
-[product-screenshot]: public/Tienda.png
+[ecommerce-screenshot]: public/Tienda.png
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
 [github]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
